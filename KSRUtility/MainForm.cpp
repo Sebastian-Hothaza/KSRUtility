@@ -12,4 +12,5 @@ void Main(array<String^>^ args)
 
 	KSRUtility::MainForm form;
 	Application::Run(%form);
+	//Hello World
 }
