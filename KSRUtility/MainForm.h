@@ -57,6 +57,10 @@ namespace KSRUtility {
 	private: System::Windows::Forms::Panel^  editMemberPNL;
 	private: System::Windows::Forms::Panel^  exportMembersPNL;
 	private: System::Windows::Forms::Panel^  settingsPNL;
+	private: System::Windows::Forms::Panel^  registerMemberPNL;
+	private: System::Windows::Forms::Panel^  confirmPaymentPNL;
+	private: System::Windows::Forms::Panel^  editRegistrationPNL;
+	private: System::Windows::Forms::Panel^  exportDayPNL;
 
 	private:
 		/// <summary>
@@ -86,6 +90,10 @@ namespace KSRUtility {
 			this->registerMemberBTN = (gcnew System::Windows::Forms::Button());
 			this->confirmPmtBTN = (gcnew System::Windows::Forms::Button());
 			this->editRegistrationBTN = (gcnew System::Windows::Forms::Button());
+			this->registerMemberPNL = (gcnew System::Windows::Forms::Panel());
+			this->confirmPaymentPNL = (gcnew System::Windows::Forms::Panel());
+			this->editRegistrationPNL = (gcnew System::Windows::Forms::Panel());
+			this->exportDayPNL = (gcnew System::Windows::Forms::Panel());
 			this->membersPNL = (gcnew System::Windows::Forms::Panel());
 			this->editMemberBTN = (gcnew System::Windows::Forms::Button());
 			this->exportMemberBTN = (gcnew System::Windows::Forms::Button());
@@ -102,50 +110,15 @@ namespace KSRUtility {
 			this->membersPNL->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// trackDaysLBL
+			// top
 			// 
-			this->trackDaysLBL->AutoSize = true;
-			this->trackDaysLBL->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->trackDaysLBL->ForeColor = System::Drawing::SystemColors::Control;
-			this->trackDaysLBL->Location = System::Drawing::Point(12, 9);
-			this->trackDaysLBL->Name = L"trackDaysLBL";
-			this->trackDaysLBL->Size = System::Drawing::Size(167, 36);
-			this->trackDaysLBL->TabIndex = 0;
-			this->trackDaysLBL->Text = L"Track Days";
-			// 
-			// addMemberBTN
-			// 
-			this->addMemberBTN->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(171)),
-				static_cast<System::Int32>(static_cast<System::Byte>(65)));
-			this->addMemberBTN->FlatAppearance->BorderSize = 0;
-			this->addMemberBTN->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->addMemberBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->addMemberBTN->ForeColor = System::Drawing::Color::White;
-			this->addMemberBTN->Location = System::Drawing::Point(0, 0);
-			this->addMemberBTN->Name = L"addMemberBTN";
-			this->addMemberBTN->Size = System::Drawing::Size(230, 50);
-			this->addMemberBTN->TabIndex = 5;
-			this->addMemberBTN->Text = L"Add Member";
-			this->addMemberBTN->UseVisualStyleBackColor = false;
-			this->addMemberBTN->Click += gcnew System::EventHandler(this, &MainForm::addMemberBTN_Click);
-			// 
-			// exportMemberBTN
-			// 
-			this->exportMemberBTN->BackColor = System::Drawing::Color::Indigo;
-			this->exportMemberBTN->FlatAppearance->BorderSize = 0;
-			this->exportMemberBTN->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->exportMemberBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->exportMemberBTN->ForeColor = System::Drawing::Color::White;
-			this->exportMemberBTN->Location = System::Drawing::Point(460, 0);
-			this->exportMemberBTN->Name = L"exportMemberBTN";
-			this->exportMemberBTN->Size = System::Drawing::Size(230, 50);
-			this->exportMemberBTN->TabIndex = 7;
-			this->exportMemberBTN->Text = L"Export Members";
-			this->exportMemberBTN->UseVisualStyleBackColor = false;
-			this->exportMemberBTN->Click += gcnew System::EventHandler(this, &MainForm::exportMemberBTN_Click);
+			this->top->BackColor = System::Drawing::Color::White;
+			this->top->Controls->Add(this->naviLBL);
+			this->top->Dock = System::Windows::Forms::DockStyle::Top;
+			this->top->Location = System::Drawing::Point(196, 0);
+			this->top->Name = L"top";
+			this->top->Size = System::Drawing::Size(696, 54);
+			this->top->TabIndex = 1;
 			// 
 			// naviLBL
 			// 
@@ -159,15 +132,43 @@ namespace KSRUtility {
 			this->naviLBL->Text = L"Add Member";
 			this->naviLBL->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
-			// top
+			// navipanel
 			// 
-			this->top->BackColor = System::Drawing::Color::White;
-			this->top->Controls->Add(this->naviLBL);
-			this->top->Dock = System::Windows::Forms::DockStyle::Top;
-			this->top->Location = System::Drawing::Point(196, 0);
-			this->top->Name = L"top";
-			this->top->Size = System::Drawing::Size(690, 54);
-			this->top->TabIndex = 1;
+			this->navipanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(53)),
+				static_cast<System::Int32>(static_cast<System::Byte>(75)));
+			this->navipanel->Controls->Add(this->logopanel);
+			this->navipanel->Controls->Add(this->membersBTN);
+			this->navipanel->Controls->Add(this->eventsBTN);
+			this->navipanel->Controls->Add(this->settingsBTN);
+			this->navipanel->Controls->Add(this->logo);
+			this->navipanel->Dock = System::Windows::Forms::DockStyle::Left;
+			this->navipanel->Location = System::Drawing::Point(0, 0);
+			this->navipanel->Name = L"navipanel";
+			this->navipanel->Size = System::Drawing::Size(196, 394);
+			this->navipanel->TabIndex = 0;
+			// 
+			// logopanel
+			// 
+			this->logopanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->logopanel->Controls->Add(this->trackDaysLBL);
+			this->logopanel->Dock = System::Windows::Forms::DockStyle::Top;
+			this->logopanel->Location = System::Drawing::Point(0, 0);
+			this->logopanel->Name = L"logopanel";
+			this->logopanel->Size = System::Drawing::Size(196, 54);
+			this->logopanel->TabIndex = 0;
+			// 
+			// trackDaysLBL
+			// 
+			this->trackDaysLBL->AutoSize = true;
+			this->trackDaysLBL->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->trackDaysLBL->ForeColor = System::Drawing::SystemColors::Control;
+			this->trackDaysLBL->Location = System::Drawing::Point(12, 9);
+			this->trackDaysLBL->Name = L"trackDaysLBL";
+			this->trackDaysLBL->Size = System::Drawing::Size(167, 36);
+			this->trackDaysLBL->TabIndex = 0;
+			this->trackDaysLBL->Text = L"Track Days";
 			// 
 			// membersBTN
 			// 
@@ -184,7 +185,7 @@ namespace KSRUtility {
 			this->membersBTN->TabIndex = 1;
 			this->membersBTN->Text = L"Members";
 			this->membersBTN->UseVisualStyleBackColor = false;
-			this->membersBTN->Click += gcnew System::EventHandler(this, &MainForm::button_Click);
+			this->membersBTN->Click += gcnew System::EventHandler(this, &MainForm::membersBTN_Click);
 			// 
 			// eventsBTN
 			// 
@@ -201,17 +202,6 @@ namespace KSRUtility {
 			this->eventsBTN->UseVisualStyleBackColor = true;
 			this->eventsBTN->Click += gcnew System::EventHandler(this, &MainForm::eventsBTN_Click);
 			// 
-			// logo
-			// 
-			this->logo->BackColor = System::Drawing::Color::Transparent;
-			this->logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"logo.Image")));
-			this->logo->Location = System::Drawing::Point(0, 322);
-			this->logo->Name = L"logo";
-			this->logo->Size = System::Drawing::Size(194, 54);
-			this->logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->logo->TabIndex = 2;
-			this->logo->TabStop = false;
-			// 
 			// settingsBTN
 			// 
 			this->settingsBTN->FlatAppearance->BorderSize = 0;
@@ -227,82 +217,16 @@ namespace KSRUtility {
 			this->settingsBTN->UseVisualStyleBackColor = true;
 			this->settingsBTN->Click += gcnew System::EventHandler(this, &MainForm::settingsBTN_Click);
 			// 
-			// navipanel
+			// logo
 			// 
-			this->navipanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(53)),
-				static_cast<System::Int32>(static_cast<System::Byte>(75)));
-			this->navipanel->Controls->Add(this->logopanel);
-			this->navipanel->Controls->Add(this->membersBTN);
-			this->navipanel->Controls->Add(this->eventsBTN);
-			this->navipanel->Controls->Add(this->settingsBTN);
-			this->navipanel->Controls->Add(this->logo);
-			this->navipanel->Dock = System::Windows::Forms::DockStyle::Left;
-			this->navipanel->Location = System::Drawing::Point(0, 0);
-			this->navipanel->Name = L"navipanel";
-			this->navipanel->Size = System::Drawing::Size(196, 400);
-			this->navipanel->TabIndex = 0;
-			// 
-			// logopanel
-			// 
-			this->logopanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->logopanel->Controls->Add(this->trackDaysLBL);
-			this->logopanel->Dock = System::Windows::Forms::DockStyle::Top;
-			this->logopanel->Location = System::Drawing::Point(0, 0);
-			this->logopanel->Name = L"logopanel";
-			this->logopanel->Size = System::Drawing::Size(196, 54);
-			this->logopanel->TabIndex = 0;
-			// 
-			// membersPNL
-			// 
-			this->membersPNL->Controls->Add(this->editMemberBTN);
-			this->membersPNL->Controls->Add(this->exportMemberBTN);
-			this->membersPNL->Controls->Add(this->addMemberBTN);
-			this->membersPNL->Controls->Add(this->addMemberPNL);
-			this->membersPNL->Controls->Add(this->editMemberPNL);
-			this->membersPNL->Controls->Add(this->exportMembersPNL);
-			this->membersPNL->Location = System::Drawing::Point(196, 54);
-			this->membersPNL->Name = L"membersPNL";
-			this->membersPNL->Size = System::Drawing::Size(690, 340);
-			this->membersPNL->TabIndex = 8;
-			// 
-			// editMemberBTN
-			// 
-			this->editMemberBTN->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(229)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
-				static_cast<System::Int32>(static_cast<System::Byte>(49)));
-			this->editMemberBTN->FlatAppearance->BorderSize = 0;
-			this->editMemberBTN->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->editMemberBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->editMemberBTN->ForeColor = System::Drawing::Color::White;
-			this->editMemberBTN->Location = System::Drawing::Point(230, 0);
-			this->editMemberBTN->Name = L"editMemberBTN";
-			this->editMemberBTN->Size = System::Drawing::Size(230, 50);
-			this->editMemberBTN->TabIndex = 6;
-			this->editMemberBTN->Text = L"Edit Member";
-			this->editMemberBTN->UseVisualStyleBackColor = false;
-			this->editMemberBTN->Click += gcnew System::EventHandler(this, &MainForm::editMemberBTN_Click);
-			// 
-			// addMemberPNL
-			// 
-			this->addMemberPNL->Location = System::Drawing::Point(0, 50);
-			this->addMemberPNL->Name = L"addMemberPNL";
-			this->addMemberPNL->Size = System::Drawing::Size(690, 290);
-			this->addMemberPNL->TabIndex = 8;
-			// 
-			// editMemberPNL
-			// 
-			this->editMemberPNL->Location = System::Drawing::Point(0, 50);
-			this->editMemberPNL->Name = L"editMemberPNL";
-			this->editMemberPNL->Size = System::Drawing::Size(690, 290);
-			this->editMemberPNL->TabIndex = 9;
-			// 
-			// exportMembersPNL
-			// 
-			this->exportMembersPNL->Location = System::Drawing::Point(0, 50);
-			this->exportMembersPNL->Name = L"exportMembersPNL";
-			this->exportMembersPNL->Size = System::Drawing::Size(690, 290);
-			this->exportMembersPNL->TabIndex = 10;
+			this->logo->BackColor = System::Drawing::Color::Transparent;
+			this->logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"logo.Image")));
+			this->logo->Location = System::Drawing::Point(0, 322);
+			this->logo->Name = L"logo";
+			this->logo->Size = System::Drawing::Size(194, 54);
+			this->logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->logo->TabIndex = 2;
+			this->logo->TabStop = false;
 			// 
 			// EventsPNL
 			// 
@@ -310,9 +234,13 @@ namespace KSRUtility {
 			this->EventsPNL->Controls->Add(this->registerMemberBTN);
 			this->EventsPNL->Controls->Add(this->confirmPmtBTN);
 			this->EventsPNL->Controls->Add(this->editRegistrationBTN);
+			this->EventsPNL->Controls->Add(this->registerMemberPNL);
+			this->EventsPNL->Controls->Add(this->confirmPaymentPNL);
+			this->EventsPNL->Controls->Add(this->editRegistrationPNL);
+			this->EventsPNL->Controls->Add(this->exportDayPNL);
 			this->EventsPNL->Location = System::Drawing::Point(196, 54);
 			this->EventsPNL->Name = L"EventsPNL";
-			this->EventsPNL->Size = System::Drawing::Size(690, 340);
+			this->EventsPNL->Size = System::Drawing::Size(696, 340);
 			this->EventsPNL->TabIndex = 9;
 			// 
 			// exportDayBTN
@@ -323,12 +251,13 @@ namespace KSRUtility {
 			this->exportDayBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->exportDayBTN->ForeColor = System::Drawing::Color::White;
-			this->exportDayBTN->Location = System::Drawing::Point(518, 0);
+			this->exportDayBTN->Location = System::Drawing::Point(522, 0);
 			this->exportDayBTN->Name = L"exportDayBTN";
-			this->exportDayBTN->Size = System::Drawing::Size(172, 50);
+			this->exportDayBTN->Size = System::Drawing::Size(174, 50);
 			this->exportDayBTN->TabIndex = 11;
 			this->exportDayBTN->Text = L"Export Day";
 			this->exportDayBTN->UseVisualStyleBackColor = false;
+			this->exportDayBTN->Click += gcnew System::EventHandler(this, &MainForm::exportDayBTN_Click);
 			// 
 			// registerMemberBTN
 			// 
@@ -358,10 +287,11 @@ namespace KSRUtility {
 			this->confirmPmtBTN->ForeColor = System::Drawing::Color::White;
 			this->confirmPmtBTN->Location = System::Drawing::Point(174, 0);
 			this->confirmPmtBTN->Name = L"confirmPmtBTN";
-			this->confirmPmtBTN->Size = System::Drawing::Size(172, 50);
+			this->confirmPmtBTN->Size = System::Drawing::Size(174, 50);
 			this->confirmPmtBTN->TabIndex = 8;
 			this->confirmPmtBTN->Text = L"Confirm Payment ";
 			this->confirmPmtBTN->UseVisualStyleBackColor = false;
+			this->confirmPmtBTN->Click += gcnew System::EventHandler(this, &MainForm::confirmPmtBTN_Click);
 			// 
 			// editRegistrationBTN
 			// 
@@ -372,18 +302,145 @@ namespace KSRUtility {
 			this->editRegistrationBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->editRegistrationBTN->ForeColor = System::Drawing::Color::White;
-			this->editRegistrationBTN->Location = System::Drawing::Point(346, 0);
+			this->editRegistrationBTN->Location = System::Drawing::Point(348, 0);
 			this->editRegistrationBTN->Name = L"editRegistrationBTN";
-			this->editRegistrationBTN->Size = System::Drawing::Size(172, 50);
+			this->editRegistrationBTN->Size = System::Drawing::Size(174, 50);
 			this->editRegistrationBTN->TabIndex = 7;
 			this->editRegistrationBTN->Text = L"Edit Registration";
 			this->editRegistrationBTN->UseVisualStyleBackColor = false;
+			this->editRegistrationBTN->Click += gcnew System::EventHandler(this, &MainForm::editRegistrationBTN_Click);
+			// 
+			// registerMemberPNL
+			// 
+			this->registerMemberPNL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(200)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(200)));
+			this->registerMemberPNL->Location = System::Drawing::Point(0, 50);
+			this->registerMemberPNL->Name = L"registerMemberPNL";
+			this->registerMemberPNL->Size = System::Drawing::Size(696, 290);
+			this->registerMemberPNL->TabIndex = 12;
+			// 
+			// confirmPaymentPNL
+			// 
+			this->confirmPaymentPNL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(200)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->confirmPaymentPNL->Location = System::Drawing::Point(0, 50);
+			this->confirmPaymentPNL->Name = L"confirmPaymentPNL";
+			this->confirmPaymentPNL->Size = System::Drawing::Size(696, 290);
+			this->confirmPaymentPNL->TabIndex = 13;
+			// 
+			// editRegistrationPNL
+			// 
+			this->editRegistrationPNL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->editRegistrationPNL->Location = System::Drawing::Point(0, 50);
+			this->editRegistrationPNL->Name = L"editRegistrationPNL";
+			this->editRegistrationPNL->Size = System::Drawing::Size(696, 290);
+			this->editRegistrationPNL->TabIndex = 13;
+			// 
+			// exportDayPNL
+			// 
+			this->exportDayPNL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)), static_cast<System::Int32>(static_cast<System::Byte>(170)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->exportDayPNL->Location = System::Drawing::Point(0, 50);
+			this->exportDayPNL->Name = L"exportDayPNL";
+			this->exportDayPNL->Size = System::Drawing::Size(696, 290);
+			this->exportDayPNL->TabIndex = 13;
+			// 
+			// membersPNL
+			// 
+			this->membersPNL->Controls->Add(this->editMemberBTN);
+			this->membersPNL->Controls->Add(this->exportMemberBTN);
+			this->membersPNL->Controls->Add(this->addMemberBTN);
+			this->membersPNL->Controls->Add(this->addMemberPNL);
+			this->membersPNL->Controls->Add(this->editMemberPNL);
+			this->membersPNL->Controls->Add(this->exportMembersPNL);
+			this->membersPNL->Location = System::Drawing::Point(196, 54);
+			this->membersPNL->Name = L"membersPNL";
+			this->membersPNL->Size = System::Drawing::Size(696, 340);
+			this->membersPNL->TabIndex = 8;
+			// 
+			// editMemberBTN
+			// 
+			this->editMemberBTN->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(229)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(49)));
+			this->editMemberBTN->FlatAppearance->BorderSize = 0;
+			this->editMemberBTN->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->editMemberBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->editMemberBTN->ForeColor = System::Drawing::Color::White;
+			this->editMemberBTN->Location = System::Drawing::Point(232, 0);
+			this->editMemberBTN->Name = L"editMemberBTN";
+			this->editMemberBTN->Size = System::Drawing::Size(232, 50);
+			this->editMemberBTN->TabIndex = 6;
+			this->editMemberBTN->Text = L"Edit Member";
+			this->editMemberBTN->UseVisualStyleBackColor = false;
+			this->editMemberBTN->Click += gcnew System::EventHandler(this, &MainForm::editMemberBTN_Click);
+			// 
+			// exportMemberBTN
+			// 
+			this->exportMemberBTN->BackColor = System::Drawing::Color::Indigo;
+			this->exportMemberBTN->FlatAppearance->BorderSize = 0;
+			this->exportMemberBTN->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->exportMemberBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->exportMemberBTN->ForeColor = System::Drawing::Color::White;
+			this->exportMemberBTN->Location = System::Drawing::Point(464, 0);
+			this->exportMemberBTN->Name = L"exportMemberBTN";
+			this->exportMemberBTN->Size = System::Drawing::Size(232, 50);
+			this->exportMemberBTN->TabIndex = 7;
+			this->exportMemberBTN->Text = L"Export Members";
+			this->exportMemberBTN->UseVisualStyleBackColor = false;
+			this->exportMemberBTN->Click += gcnew System::EventHandler(this, &MainForm::exportMemberBTN_Click);
+			// 
+			// addMemberBTN
+			// 
+			this->addMemberBTN->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(171)),
+				static_cast<System::Int32>(static_cast<System::Byte>(65)));
+			this->addMemberBTN->FlatAppearance->BorderSize = 0;
+			this->addMemberBTN->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->addMemberBTN->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->addMemberBTN->ForeColor = System::Drawing::Color::White;
+			this->addMemberBTN->Location = System::Drawing::Point(0, 0);
+			this->addMemberBTN->Name = L"addMemberBTN";
+			this->addMemberBTN->Size = System::Drawing::Size(232, 50);
+			this->addMemberBTN->TabIndex = 5;
+			this->addMemberBTN->Text = L"Add Member";
+			this->addMemberBTN->UseVisualStyleBackColor = false;
+			this->addMemberBTN->Click += gcnew System::EventHandler(this, &MainForm::addMemberBTN_Click);
+			// 
+			// addMemberPNL
+			// 
+			this->addMemberPNL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(200)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(200)));
+			this->addMemberPNL->Location = System::Drawing::Point(0, 50);
+			this->addMemberPNL->Name = L"addMemberPNL";
+			this->addMemberPNL->Size = System::Drawing::Size(696, 290);
+			this->addMemberPNL->TabIndex = 8;
+			// 
+			// editMemberPNL
+			// 
+			this->editMemberPNL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->editMemberPNL->Location = System::Drawing::Point(0, 50);
+			this->editMemberPNL->Name = L"editMemberPNL";
+			this->editMemberPNL->Size = System::Drawing::Size(696, 290);
+			this->editMemberPNL->TabIndex = 9;
+			// 
+			// exportMembersPNL
+			// 
+			this->exportMembersPNL->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)),
+				static_cast<System::Int32>(static_cast<System::Byte>(170)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->exportMembersPNL->Location = System::Drawing::Point(0, 50);
+			this->exportMembersPNL->Name = L"exportMembersPNL";
+			this->exportMembersPNL->Size = System::Drawing::Size(696, 290);
+			this->exportMembersPNL->TabIndex = 10;
 			// 
 			// settingsPNL
 			// 
 			this->settingsPNL->Location = System::Drawing::Point(196, 54);
 			this->settingsPNL->Name = L"settingsPNL";
-			this->settingsPNL->Size = System::Drawing::Size(690, 340);
+			this->settingsPNL->Size = System::Drawing::Size(696, 340);
 			this->settingsPNL->TabIndex = 10;
 			// 
 			// MainForm
@@ -391,29 +448,35 @@ namespace KSRUtility {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gainsboro;
-			this->ClientSize = System::Drawing::Size(886, 400);
+			this->ClientSize = System::Drawing::Size(892, 394);
 			this->Controls->Add(this->top);
 			this->Controls->Add(this->navipanel);
-			this->Controls->Add(this->EventsPNL);
 			this->Controls->Add(this->membersPNL);
+			this->Controls->Add(this->EventsPNL);
 			this->Controls->Add(this->settingsPNL);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"MainForm";
-			this->Text = L"KSR";
+			this->Text = L"KSR Management Utility";
 			this->TopMost = true;
 			this->top->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logo))->EndInit();
 			this->navipanel->ResumeLayout(false);
 			this->logopanel->ResumeLayout(false);
 			this->logopanel->PerformLayout();
-			this->membersPNL->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logo))->EndInit();
 			this->EventsPNL->ResumeLayout(false);
+			this->membersPNL->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-private: System::Void button_Click(System::Object^  sender, System::EventArgs^  e) {
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//                                                                        S I D E      B U T T O N S
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+private: System::Void membersBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	// handling coloring of side buttons
 	this->membersBTN->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 		static_cast<System::Int32>(static_cast<System::Byte>(115)));
@@ -441,7 +504,7 @@ private: System::Void eventsBTN_Click(System::Object^  sender, System::EventArgs
 		static_cast<System::Int32>(static_cast<System::Byte>(75)));
 
 	//naviLBL
-	this->naviLBL->Text = "Events";
+	this->naviLBL->Text = "Register Member";
 	this->naviLBL->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 
 	// handling of panels
@@ -470,23 +533,98 @@ private: System::Void settingsBTN_Click(System::Object^  sender, System::EventAr
 	this->settingsPNL->Show();
 }
 
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//                                                                        M E M B E R S       T A B       B U T T O N S
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 private: System::Void addMemberBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->naviLBL->Text = "Add Member";
-	this->naviLBL->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+
+
+
+
+	// handling of panels
+	this->addMemberPNL->Show();
+	this->exportMembersPNL->Hide();
+	this->editMemberPNL->Hide();
+
 }
+
 
 private: System::Void editMemberBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->naviLBL->Text = "Edit Member";
-	this->naviLBL->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+
+
+
+	// handling of panels
+	this->addMemberPNL->Hide();
+	this->editMemberPNL->Show();
+	this->exportMembersPNL->Hide();
+
 }
+
 
 private: System::Void exportMemberBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->naviLBL->Text = "Export Member";
-	this->naviLBL->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+
+
+
+	// handling of panels
+	this->addMemberPNL->Hide();
+	this->editMemberPNL->Hide();
+	this->exportMembersPNL->Show();
+
 }
 
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//                                                                        E V E N T S       T A B       B U T T O N S
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 private: System::Void registerMemberBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->naviLBL->Text = "Register Member";
+
+	// handling of panels
+	this->registerMemberPNL->Show();
+	this->confirmPaymentPNL->Hide();
+	this->editRegistrationPNL->Hide();
+	this->exportDayPNL->Hide();
 }
+
+private: System::Void confirmPmtBTN_Click(System::Object^  sender, System::EventArgs^  e) {\
+	this->naviLBL->Text = "Confirm Payment";
+
+	// handling of panels
+	this->registerMemberPNL->Hide();
+	this->confirmPaymentPNL->Show();
+	this->editRegistrationPNL->Hide();
+	this->exportDayPNL->Hide();
+}
+private: System::Void editRegistrationBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->naviLBL->Text = "Edit Registration";
+
+	// handling of panels
+	this->registerMemberPNL->Hide();
+	this->confirmPaymentPNL->Hide();
+	this->editRegistrationPNL->Show();
+	this->exportDayPNL->Hide();
+}
+private: System::Void exportDayBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->naviLBL->Text = "Export Day";
+
+	// handling of panels
+	this->registerMemberPNL->Hide();
+	this->confirmPaymentPNL->Hide();
+	this->editRegistrationPNL->Hide();
+	this->exportDayPNL->Show();
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//                                                                       S E T T I N G      T A B       B U T T O N S
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 };
 }
 
