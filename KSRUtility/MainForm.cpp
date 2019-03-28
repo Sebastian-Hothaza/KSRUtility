@@ -1,3 +1,4 @@
+//--------------------
 #include "MainForm.h"
 
 using namespace System;
@@ -12,6 +13,4 @@ void Main(array<String^>^ args)
 
 	KSRUtility::MainForm form;
 	Application::Run(%form);
-	//Hello World
-	//Hello from home
 }
