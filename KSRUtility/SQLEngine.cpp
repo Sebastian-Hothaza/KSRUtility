@@ -94,6 +94,21 @@ void init_SQL(string address, string cdb, string cid, string cpw) {
 	}
 }
 
+void disconnect_SQL() {
+	cout << "--- DISCONNECTING SQL DATABASE SESSION ---" << endl;
+	//Freeing sources
+	SQLFreeHandle(SQL_HANDLE_STMT, SQLStatementHandle);
+
+	//disconnecting from server
+	SQLDisconnect(SQLConnectionHandle);
+
+	//Freeing sources
+	SQLFreeHandle(SQL_HANDLE_DBC, SQLConnectionHandle);
+	SQLFreeHandle(SQL_HANDLE_ENV, SQLEnvHandle);
+}
+
+/*
+
 void printTable(string tableName) { // TODO: Make smart and read table column headings and properly print it out
 
 	if (SQL_SUCCESS != (SQLExecDirect(SQLStatementHandle, (SQLCHAR*)("SELECT * FROM " + tableName).c_str(), SQL_NTS))) {
@@ -129,6 +144,11 @@ void printTable(string tableName) { // TODO: Make smart and read table column he
 	}
 }
 
+*/
+
+
+
+/*
 void runQuery(string query) {
 	if (SQL_SUCCESS != (SQLExecDirect(SQLStatementHandle, (SQLCHAR*)query.c_str(), SQL_NTS))) {
 		showSQLError(SQL_HANDLE_STMT, SQLStatementHandle);
@@ -141,6 +161,7 @@ void runQuery(string query) {
 		}
 	//}
 }
+*/
 
 /*
 std::vector<std::vector<std::string>> runQuery_withOutput(std::string query) {
@@ -192,17 +213,6 @@ std::vector<std::vector<std::string>> runQuery_withOutput(std::string query) {
 		}
 */
 
-void disconnect_SQL() {
-	cout << "--- DISCONNECTING SQL DATABASE SESSION ---" << endl;
-	//Freeing sources
-	SQLFreeHandle(SQL_HANDLE_STMT, SQLStatementHandle);
 
-	//disconnecting from server
-	SQLDisconnect(SQLConnectionHandle);
-
-	//Freeing sources
-	SQLFreeHandle(SQL_HANDLE_DBC, SQLConnectionHandle);
-	SQLFreeHandle(SQL_HANDLE_ENV, SQLEnvHandle);
-}
 
 // INSERT MORE FN HERE

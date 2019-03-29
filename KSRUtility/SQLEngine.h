@@ -10,7 +10,7 @@ void showSQLError(unsigned int handleType, const SQLHANDLE& handle);
 
 void init_SQL(std::string address, std::string cdb, std::string cid, std::string cpw);
 void disconnect_SQL();
-void printTable(std::string tableName);
-void runQuery(std::string query);
+//void printTable(std::string tableName);
+//void runQuery(std::string query);
 //std::vector<std::vector<std::string>> runQuery_withOutput(std::string query);
 
