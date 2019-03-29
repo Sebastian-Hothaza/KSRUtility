@@ -142,6 +142,7 @@ void runQuery(string query) {
 	//}
 }
 
+/*
 std::vector<std::vector<std::string>> runQuery_withOutput(std::string query) {
 	vector<vector<std::string>> result;
 	
@@ -168,7 +169,7 @@ std::vector<std::vector<std::string>> runQuery_withOutput(std::string query) {
 	
 	return result;
 }
-
+*/
 /*
 // query was sucess; we print the data
 		//db params we expect to find with our query sample

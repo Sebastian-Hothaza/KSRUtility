@@ -12,5 +12,5 @@ void init_SQL(std::string address, std::string cdb, std::string cid, std::string
 void disconnect_SQL();
 void printTable(std::string tableName);
 void runQuery(std::string query);
-std::vector<std::vector<std::string>> runQuery_withOutput(std::string query);
+//std::vector<std::vector<std::string>> runQuery_withOutput(std::string query);
 
